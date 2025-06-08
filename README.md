@@ -53,6 +53,33 @@ source ~/.bashrc
 ```
 After that you can use
 ```
-set_comment "comment about current dir"
+set_comment "comment about the current dir"
 get_comments
+```
+
+# Creating directory with comment
+
+Add lines to the ~/.bashrc
+
+```
+mkdir-with-comments() {
+  # Создаём директорию, учитывая пробелы в имени
+  mkdir -p "$1"
+  
+  # Добавляем комментарий с помощью comment_tool
+  comment_tool --comment "$1" --from-command-line "$2"
+}
+
+```
+
+and apply changes:
+
+```
+source ~/.bashrc
+```
+
+After that you can use
+
+```
+mkdir-with-comments test_dir "Test comment"
 ```
