@@ -28,6 +28,12 @@ g++ comment_tool.cpp -o comment_tool
 ./comment_tool --append-comment . --from-command-line "Other line"
 ```
 
+# Appending a comment from standard input using the pipe
+
+```
+echo "Test comment" | comment_tool --append-comment . --from-stdin
+```
+
 # Viewing all comments about the current directory
 
 ```
