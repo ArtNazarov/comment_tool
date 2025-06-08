@@ -1,5 +1,8 @@
 # comment_tool
+
 C++ console app to manage comments in a some directory
+
+The utility create, update or delete hidden file named ".comment" in the passed directory
 
 # Usage
 
