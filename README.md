@@ -39,3 +39,20 @@ g++ comment_tool.cpp -o comment_tool
 ```
 ./comment_tool --remove-comment .
 ```
+# Using with bash aliases
+
+Add to the ~/.bashrc like:
+```
+alias set_comment="comment_tool --comment . --from-command-line "
+alias append_comment="./comment_tool --append-comment . --from-command-line "
+alias get_comments="comment_tool --view-comment . "
+```
+and apply changes:
+```
+source ~/.bashrc
+```
+After that you can use
+```
+set_comment "comment about current dir"
+get_comments
+```
