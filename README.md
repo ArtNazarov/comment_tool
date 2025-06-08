@@ -89,3 +89,27 @@ After that you can use
 ```
 mkdir-with-comments test_dir "Test comment"
 ```
+
+# Finding directories with passed comment
+
+Add to ~/.bashrc:
+
+```
+find_comment_dirs() {
+    local search_path="$1"
+    local target_substr="$2"
+    local current_user
+    current_user=$(id -un)
+
+    find "$search_path" -type d ! -user "$current_user" -prune -o \
+        -type f -name ".comment" -user "$current_user" -exec sh -c '
+            for file; do
+                if grep -q "$0" "$file"; then
+                    dirname "$file"
+                fi
+            done
+        ' "$target_substr" {} + | sort -u
+}
+```
+
+Note: the search will skip directories if their owner is not the current user
