@@ -119,3 +119,7 @@ For example,
 ```
 find_comment_dirs /home/username "substring"
 ```
+
+# GUI frontend
+
+[comment_tool_gui_qt](https://github.com/ArtNazarov/comment_tool_gui_qt)
