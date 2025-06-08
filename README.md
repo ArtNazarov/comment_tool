@@ -113,3 +113,9 @@ find_comment_dirs() {
 ```
 
 Note: the search will skip directories if their owner is not the current user
+
+For example,
+
+```
+find_comment_dirs /home/username "substring"
+```
